@@ -23,4 +23,9 @@ class Post extends Model
     {
         return File::get($this->img);
     }
+
+    public function getBodyAttribute()
+    {
+        return nl2br($this->desc);
+    }
 }
