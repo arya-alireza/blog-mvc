@@ -1,0 +1,22 @@
+{
+    "autoload": {
+        "files": [
+            "bootstrap/helpers.php"
+        ],
+        "psr-4": {
+            "App\\": "app/",
+            "Core\\": "core/",
+            "Database\\": "database/"
+        }
+    },
+    "scripts": {
+        "make:model": "Core\\Command::makeModel",
+        "make:migration": "Core\\Command::makeMigration",
+        "make:controller": "Core\\Command::makeController",
+        "migrate": "Core\\Command::migrate",
+        "migrate:refresh": "Core\\Command::migrateRefresh"
+    },
+    "require": {
+        "twig/twig": "^3.3"
+    }
+}

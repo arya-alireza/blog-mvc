@@ -1,0 +1,14 @@
+header {
+    background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    h1 {
+        font-size: 32px;
+        a {
+            color: #333;
+            &:hover {
+                color: #000;
+            }
+        }
+    }
+}

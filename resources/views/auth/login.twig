@@ -1,0 +1,56 @@
+{% extends "layouts/app.twig" %}
+{% block title %}Login{% endblock %}
+{% block main %}
+{% if auth() %}{{ redirect('dashboard') }}{% endif %}
+<main class="login">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <form action="{{ route('login.do') }}" method="post">
+                            {% if session('error') %}
+                            <div class="alert alert-danger">{{ session('error') }}</div>
+                            {% endif %}
+                            <div class="mb-2">
+                                <label for="email">Email</label>
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    placeholder="Enter your email"
+                                    name="email"
+                                    id="email"
+                                    required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="password">Password</label>
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    placeholder="Enter your password"
+                                    name="password"
+                                    id="password"
+                                    required
+                                />
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col-sm-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Login
+                                    </button>
+                                </div>
+                                <div class="col-sm text-right">
+                                    <a href="{{ route('register') }}">
+                                        Create an account? Register
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
